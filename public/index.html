@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Gustavo Torres - Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <nav  class="navbar navbar-expand-lg  w-100">
+            <div class="container">
+                 <a class="navbar-brand d-flex justify-content-start">Gustavo Torres</a>
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active underline-hover" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link underline-hover" href="#about-me">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link underline-hover" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link underline-hover" href="#certificates">Certificates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link underline-hover" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link underline-hover" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <aside>
+        <div id="menu">
+            <div id="menu--line">
+                <div class="menu__circle--container">
+                    <div id="circle1" class="menu__circle--item active"></div>
+                </div>
+                <div class="menu__circle--container">
+                    <div id="circle2" class="menu__circle--item"></div>
+                </div>
+                <div class="menu__circle--container">
+                    <div id="circle3" class="menu__circle--item"></div>
+                </div>
+                <div class="menu__circle--container">
+                    <div id="circle4" class="menu__circle--item"></div>
+                </div>
+                <div class="menu__circle--container">
+                    <div id="circle5" class="menu__circle--item"></div>
+                </div>
+                <div class="menu__circle--container">
+                    <div id="circle6" class="menu__circle--item"></div>
+                </div>
+            </div>
+            <div id="menu__icons--container">
+                <div class="menu__icons--item">
+                    <img src="./assets/icons/linkedin-in.svg" alt="linkedin-in">
+                </div>
+                <div class="menu__icons--item">
+                    <img src="./assets/icons/github.svg" alt="linkedin-in">
+                </div>
+                <div class="menu__icons--item">
+                    <img src="./assets/icons/envelope-open-solid.svg" alt="linkedin-in">
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main class="container">
+        <h1>Home</h1>
+        <section id="home" >
+
+            <div id="home__photo" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+                <div id="home__photo--container">
+                    <img id="home__photo--item" src="./assets/img/Foto_page-0001__1_-removebg-preview.png" alt="photo">
+                </div>
+            </div>
+            <div id="home__description" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+                <div id="home__description--container">
+                    <h1>Hello, I'm Gustavo Torres</h1>
+                    <h2>Civil Engineer - Full Stack Developer (M.E.R.N.)</h2>
+                    <p id="home__description--item">
+                        <span id="cursor" class="cursor"></span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="about-me" data-aos="fade-up" data-aos-duration="1000">
+            <h1>About Me</h1>
+            <div id="about-me__timeline">
+                <div class="timeline__date--container" id="date1--container">
+                    <p class="timeline__date--text">2021</p>
+                    <div id="date1" class="timeline__date--item"></div>
+                </div>
+                <div class="timeline__date--container" id="date2--container">
+                    <p class="timeline__date--text">2022</p>
+                    <div id="date2" class="timeline__date--item"></div>
+                </div>
+                <div class="timeline__date--container" id="date3--container">
+                    <p class="timeline__date--text">2023</p>
+                    <div id="date3" class="timeline__date--item"></div>
+                </div>
+            </div>
+            <div id="about-me__description">
+            </div>
+        </section>
+        <section id="skills">
+            <h1>Skills</h1>
+            <div id="skills__menu">
+                <p class="skills__menu--item" id="skill1">Technologies</p>
+                <p class="skills__menu--item" id="skill2">Additional</p>
+                <p class="skills__menu--item" id="skill3">Soft skills</p>
+            </div>
+            <div id="skills__menu--container">
+            </div>
+        </section>
+        <section id="certificates">
+            <h1>Certificates</h1>
+            <div id="certificates-container">
+                </div>
+                <div class="modal fade" id="modalExample" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <h1>Portfolio</h1>
+            <div id="carouselExampleCaptions" class="carousel slide w-75">
+                <div id="portfolio-indicators" class="carousel-indicators">
+
+                </div>
+                <div id="portfolio-carousel" class="carousel-inner">
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
