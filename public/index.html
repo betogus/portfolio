@@ -8,25 +8,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./css/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>Gustavo Torres - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Gustavo Torres - Portfolio (Web developer)</title>
+    <meta name="description"
+        content='I am a civil engineer working in my profession in office tasks.   However, after graduating, I became interested in the world of programming, so I continued my studies as a full stack web developer at CoderHouse. Currently, I have finished the HTML, CSS, Javascript, React Js, React Native and Backend courses and I am studying at Oracle Next Education, XAcademy and "Instituto Superior Politécnico de
+        Córdoba". Until I can finish my courses, my goal is to be able to work as a Frontend developer from now on. I have an intermediate level of English.'>
 </head>
 
 <body>
     <header>
-        <nav  class="navbar navbar-expand-lg  w-100">
-            <div class="container">
-                 <a class="navbar-brand d-flex justify-content-start">Gustavo Torres</a>
-                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+        <nav class="navbar navbar-expand-md w-100">
+            <div class="container-fluid navbar--container">
+                <a class="navbar-brand" id="section-name">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link active underline-hover" aria-current="page" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link underline-hover" href="#about-me">About</a>
+                            <a class="nav-link underline-hover" href="#about">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link underline-hover" href="#skills">Skills</a>
@@ -44,36 +53,41 @@
                 </div>
             </div>
         </nav>
+
     </header>
     <aside>
         <div id="menu">
             <div id="menu--line">
-                <div class="menu__circle--container">
+                <a class="menu__circle--container" href="#home">
                     <div id="circle1" class="menu__circle--item active"></div>
-                </div>
-                <div class="menu__circle--container">
+                </a>
+                <a class="menu__circle--container" href="#about">
                     <div id="circle2" class="menu__circle--item"></div>
-                </div>
-                <div class="menu__circle--container">
+                </a>
+                <a class="menu__circle--container" href="#skills">
                     <div id="circle3" class="menu__circle--item"></div>
-                </div>
-                <div class="menu__circle--container">
+                </a>
+                <a class="menu__circle--container" href="#certificates">
                     <div id="circle4" class="menu__circle--item"></div>
-                </div>
-                <div class="menu__circle--container">
+                </a>
+                <a class="menu__circle--container" href="#portfolio">
                     <div id="circle5" class="menu__circle--item"></div>
-                </div>
-                <div class="menu__circle--container">
+                </a>
+                <a class="menu__circle--container" href="#contact">
                     <div id="circle6" class="menu__circle--item"></div>
-                </div>
+                </a>
             </div>
             <div id="menu__icons--container">
-                <div class="menu__icons--item">
-                    <img src="./assets/icons/linkedin-in.svg" alt="linkedin-in">
-                </div>
-                <div class="menu__icons--item">
-                    <img src="./assets/icons/github.svg" alt="linkedin-in">
-                </div>
+                <a href="https://www.linkedin.com/in/betogus2009/" target="_blank">
+                    <div class="menu__icons--item">
+                        <img src="./assets/icons/linkedin-in.svg" alt="linkedin-in">
+                    </div>
+                </a>
+                <a href="https://github.com/betogus" target="_blank">
+                    <div class="menu__icons--item">
+                        <img src="./assets/icons/github.svg" alt="linkedin-in">
+                    </div>
+                </a>
                 <div class="menu__icons--item">
                     <img src="./assets/icons/envelope-open-solid.svg" alt="linkedin-in">
                 </div>
@@ -81,27 +95,32 @@
         </div>
     </aside>
     <main class="container">
-        <h1>Home</h1>
-        <section id="home" >
-
-            <div id="home__photo" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-                <div id="home__photo--container">
-                    <img id="home__photo--item" src="./assets/img/Foto_page-0001__1_-removebg-preview.png" alt="photo">
+        <section id="home">
+            <div id="home__container">
+                <div id="home__photo" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000"
+                    data-aos-easing="ease-in-sine">
+                    <div id="home__photo--container">
+                        <img id="home__photo--item" src="./assets/img/Foto_page-0001__1_-removebg-preview.png"
+                            alt="photo">
+                    </div>
+                     <button class="btn w-50 resume" >
+                        Resume
+                     </button>
                 </div>
-            </div>
-            <div id="home__description" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-                <div id="home__description--container">
-                    <h1>Hello, I'm Gustavo Torres</h1>
-                    <h2>Civil Engineer - Full Stack Developer (M.E.R.N.)</h2>
-                    <p id="home__description--item">
-                        <span id="cursor" class="cursor"></span>
-                    </p>
+                <div id="home__description" data-aos="fade-left" data-aos-offset="300" data-aos-duration="1000"
+                    data-aos-easing="ease-in-sine">
+                    <div id="home__description--container">
+                        <span class="color-title">Hello, I'm Gustavo Torres</span>
+                        <h3>Civil Engineer - Full Stack Developer (M.E.R.N.)</h3>
+                        <p id="home__description--item">
+                            <span id="cursor" class="cursor"></span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
-        <section id="about-me" data-aos="fade-up" data-aos-duration="1000">
-            <h1>About Me</h1>
-            <div id="about-me__timeline">
+        <section id="about"  data-aos="fade-up" data-aos-duration="1000">
+            <div id="about__timeline">
                 <div class="timeline__date--container" id="date1--container">
                     <p class="timeline__date--text">2021</p>
                     <div id="date1" class="timeline__date--item"></div>
@@ -115,36 +134,35 @@
                     <div id="date3" class="timeline__date--item"></div>
                 </div>
             </div>
-            <div id="about-me__description">
+            <div id="about__description">
             </div>
         </section>
         <section id="skills">
-            <h1>Skills</h1>
             <div id="skills__menu">
                 <p class="skills__menu--item" id="skill1">Technologies</p>
                 <p class="skills__menu--item" id="skill2">Additional</p>
                 <p class="skills__menu--item" id="skill3">Soft skills</p>
             </div>
+
             <div id="skills__menu--container">
             </div>
         </section>
         <section id="certificates">
-            <h1>Certificates</h1>
             <div id="certificates-container">
-                </div>
-                <div class="modal fade" id="modalExample" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                            </div>
+            </div>
+            <div class="modal fade" id="modalExample" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
                         </div>
                     </div>
+                </div>
             </div>
         </section>
         <section id="portfolio">
-            <h1>Portfolio</h1>
-            <div id="carouselExampleCaptions" class="carousel slide w-75">
+            <div id="carouselExampleCaptions" class="carousel slide w-75" data-aos="fade-up" data-aos-offset="300"
+                data-aos-duration="1000" data-aos-easing="ease-in-sine">
                 <div id="portfolio-indicators" class="carousel-indicators">
 
                 </div>
@@ -164,8 +182,65 @@
             </div>
 
         </section>
+        <section id="contact">
+            <div class="contact--container container">
+                <div class="row">
+                    <div class="col-md-6 d-flex flex-column justify-content-center">
+                        <h2>Let's get in touch</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta nemo, dolorem amet nobis
+                            enim suscipit modi? Reprehenderit, ea incidunt, pariatur voluptas quibusdam fugit, placeat
+                            veritatis rerum accusamus autem eius ducimus.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="contact__form--container ">
+                            <form action="#">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="name">Name:</label>
+                                            <input type="text" class="form-control" id="name"
+                                                placeholder="Ingrese su nombre">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="email">Email:</label>
+                                            <input type="email" class="form-control" id="email"
+                                                placeholder="Ingrese email" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="form-floating my-5">
+                                        <textarea class="form-control maxlengthTextarea col-md-6 rows-3"
+                                            maxlength="1000" id="floatingTextarea"></textarea>
+                                        <label for="floatingTextarea">Comments</label>
+                                    </div>
+                                    <div class="contact__button--container d-flex justify-content-center">
+                                        <button type="submit" class="btn w-50" id="submit">
+                                            Message me!
+                                        </button>
+                                    </div>
 
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-item">
+                    <p><img src="./assets//icons/linkedin-in.svg" alt="linkedin">
+                    www.linkedin.com/in/betogus2009</p>
+                </div>
+                <div class="footer-item">
+                    <p><img src="./assets//icons/github.svg" alt="github">
+                    github.com/betogus</p>
+                </div>
+                <div class="footer-item">
+                    <p><img src="./assets/icons/envelope-open-solid.svg" alt="email">
+                    betogus2009@gmail.com</p>
+                </div>
+            </footer>
+        </section>
     </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>

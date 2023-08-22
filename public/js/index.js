@@ -1,19 +1,23 @@
 /* HEADER */
 //al scrollear desaparece el header
-let nav = document.querySelector('nav');
+
+let nav = document.querySelector('.navbar');
 window.addEventListener('scroll', function () {
     if (window.pageYOffset > 100) {
         nav.classList.add('nav-transition');
         nav.classList.remove('ocultar')
 
     } else {
-
         nav.classList.remove('nav-transition');
         nav.classList.add('ocultar')
 
     }
 });
-//al scrollear se van mostrando como activos el nav-link que corresponda a la seccion
+
+
+
+
+//al scrollear se van mostrando como activos el nav-link y el circle que corresponda a la seccion
 document.addEventListener("DOMContentLoaded", function () {
     var navLinks = document.querySelectorAll(".nav-link");
     var circle = document.querySelectorAll('.menu__circle--item');
@@ -34,9 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll("section").forEach(function (section) {
             var sectionTop = section.offsetTop;
             var sectionHeight = section.offsetHeight;
+            let sectionName = document.getElementById('section-name')
 
             if (currentPosition >= sectionTop - 50 && currentPosition < sectionTop + sectionHeight) {
                 currentSection = section.getAttribute("id");
+                sectionName.innerText = `${currentSection.toUpperCase()}`
             }
         });
 
@@ -62,8 +68,32 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("load", function () {
         setActiveLink();
     });
+
 });
 
+const sections = document.querySelectorAll('section');
+const section = document.getElementById('certificates')
+let currentSectionIndex = 0;
+
+window.addEventListener('wheel', (e) => {
+    e.preventDefault();
+
+    if (e.deltaY > 0) {
+        if (currentSectionIndex < sections.length - 1) {
+            currentSectionIndex++;
+        }
+    } else if (e.deltaY < 0) {
+        if (currentSectionIndex > 0) {
+            currentSectionIndex--;
+        }
+    }
+
+    sections[currentSectionIndex].scrollIntoView({
+        behavior: 'smooth'
+    });
+}, {
+    passive: false
+});
 
 /* HOME */
 
@@ -71,6 +101,7 @@ let homeDescriptionItem = document.getElementById('home__description--item')
 let descriptionItem = `I am a civil engineer working in my profession in office tasks.   However, after graduating, I became interested in the world of programming, so I continued my studies as a full stack web developer at CoderHouse. Currently, I have finished the HTML, CSS, Javascript, React Js, React Native and Backend courses and I am studying at Oracle Next Education, XAcademy and "Instituto Superior Politécnico de Córdoba ". Until I can finish my courses, my goal is to be able to work as a Frontend developer from now on. I 've an intermediate level of English.`
 const cursor = document.getElementById('cursor');
 
+//Efecto de tipeo en la descripción
 function simulateTyping(text, index = 0) {
     const delay = 30; // Retraso entre caracteres en milisegundos
 
@@ -94,12 +125,11 @@ setTimeout(() => {
 
 let dateContainer = []
 let date = []
-let aboutMeDescription = document.getElementById('about-me__description')
-aboutMeDescription.classList.add('hidden')
+let aboutMeDescription = document.getElementById('about__description')
 let dateDescription = [
     `
-    <div class="about-me__description--container" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-        <div class="about-me__description--text">
+    <div class="about__description--container" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+        <div class="about__description--text">
             <h2>Argentina Programa</h2>
             <h3>First Level</h3>
             <p>Languages learned:</p>
@@ -108,11 +138,11 @@ let dateDescription = [
                 <li>Javascript</li>
             </ul>
         </div>
-        <div class="about-me__description--text">
+        <div class="about__description--text">
             <h2>Conosur Tech</h2>
             <h3>"Curso introductorio de Internet, la Web y la Programación"</h3>
         </div>
-        <div class="about-me__description--text">
+        <div class="about__description--text">
             <h2>Soy Dalto</h2>
             <h3>Autodidact</h3>
             <p>Languages learned:<p>
@@ -125,8 +155,8 @@ let dateDescription = [
     </div>
 `,
     `   
-    <div class="about-me__description--container" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-        <div class="about-me__description--text">
+    <div class="about__description--container" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+        <div class="about__description--text">
             <h2>Web Development</h2>
             <h3>Coderhouse</h3>
             <p>Languages learned: </p>
@@ -135,11 +165,11 @@ let dateDescription = [
                 <li>CSS</li>
             </ul>
         </div>
-         <div class="about-me__description--text">
+         <div class="about__description--text">
             <h2>Javascript</h2>
             <h3>Coderhouse</h3>
         </div>
-        <div class="about-me__description--text">
+        <div class="about__description--text">
             <h2>React JS</h2>
             <h3>Coderhouse</h3>
         </div>
@@ -147,8 +177,8 @@ let dateDescription = [
 
 `,
     `
-    <div class="about-me__description--container" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-        <div class="about-me__description--text">
+    <div class="about__description--container" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+        <div class="about__description--text">
             <h2>App Development</h2>
             <h3>Coderhouse</h3>
             <p>technology learned: </p>
@@ -156,7 +186,7 @@ let dateDescription = [
                 <li>React Native</li>
             </ul>
         </div>
-        <div class="about-me__description--text">
+        <div class="about__description--text">
             <h2>Backend Development</h2>
             <h3>Coderhouse</h3>
             <p>technology learned: </p>
@@ -166,18 +196,18 @@ let dateDescription = [
                 <li>MongoDB</li>
             </ul>
         </div>
-        <div class="about-me__description--text">
+        <div class="about__description--text">
             <h2>"Desarrollo Web y Aplicaciones Digitales"</h2>
             <h3>Instituto Superior Politécnico de Córdoba</h3>
         </div>
-        <div class="about-me__description--text">
+        <div class="about__description--text">
             <h2>"XAcademy - Santex"</h2>
             <p>technology learned: </p>
             <ul>
                 <li>Angular</li>
             </ul>
         </div>
-        <div class="about-me__description--text">
+        <div class="about__description--text">
             <h2>Oracle Next Education</h2>
             <p>technology learned:</p>
             <ul>
@@ -194,19 +224,24 @@ for (let i = 1; i <= 3; i++) {
     dateContainer[i].addEventListener('click', (e) => {
         if (!aboutMeDescription.classList.contains('active')) {
             dateContainerButtonActive[i] = true
+            date[i].classList.add('active')
             aboutMeDescription.classList.add('active')
-            console.log(dateContainerButtonActive)
             aboutMeDescription.innerHTML = dateDescription[i - 1]
         } else if (dateContainerButtonActive[i] === false) {
             aboutMeDescription.innerHTML = dateDescription[i - 1]
             dateContainerButtonActive = [null, false, false, false]
+            for (let j = 1; j <= 3; j++) {
+                date[j].classList.remove('active')
+            }
+            date[i].classList.add('active')
             dateContainerButtonActive[i] = true
-            console.log(dateContainerButtonActive)
         } else {
             dateContainerButtonActive[i] = false
             aboutMeDescription.classList.remove('active')
+            for (let j = 1 ; j <=3; j++) {
+                date[j].classList.remove('active')
+            }
             aboutMeDescription.innerHTML = ''
-            console.log(dateContainerButtonActive)
         }
 
     })
@@ -215,70 +250,99 @@ let timeline
 
 /* SKILLS */
 
+
 let technologies = [{
     name: "HTML",
     level: 3,
-    icon: "html5.svg"
+    icon: "html5.svg",
+    category: "frontend"
 }, {
     name: "CSS",
     level: 3,
-    icon: "css3-alt.svg"
+    icon: "css3-alt.svg",
+    category: "frontend"
 }, {
     name: "Javascript",
     level: 3,
-    icon: "square-js.svg"
+    icon: "square-js.svg",
+    category: "frontend"
 }, {
     name: "React Js",
     level: 3,
-    icon: "react.svg"
+    icon: "react.svg",
+    category: "frontend"
 }, {
     name: "React Native",
     level: 3,
-    icon: "react.svg"
+    icon: "react.svg",
+    category: "mobile"
 }, {
     name: "Express Js",
     level: 3,
-    icon: ""
+    icon: "",
+    category: "backend"
 }, {
     name: "Node Js",
     level: 3,
-    icon: "node.svg"
+    icon: "node.svg",
+    category: "backend"
 }, {
     name: "Mongo DB",
     level: 3,
-    icon: ""
+    icon: "",
+    category: "backend"
 }, {
     name: "Python",
     level: 1,
-    icon: "python.svg"
+    icon: "python.svg",
+    category: "backend"
 }, {
     name: "C#",
     level: 1,
-    icon: "c-sharp.svg"
+    icon: "c-sharp.svg",
+    category: "backend"
 }, {
     name: ".NET",
     level: 1,
-    icon: "dotnet.svg"
+    icon: "dotnet.svg",
+    category: "backend"
 }, {
     name: "Ruby",
     level: 1,
-    icon: "ruby.svg"
+    icon: "ruby.svg",
+    category: "backend"
 }, {
     name: "Typescript",
     level: 1,
-    icon: "typescript.svg"
+    icon: "typescript.svg",
+    category: "frontend"
+}, {
+    name: "Angular",
+    level: 1,
+    icon: "angular.svg",
+    category: "frontend"
 }]
 let skills = [{
     name: "Git",
-    icon: "git.svg"
+    icon: "git-plain.svg"
 }, {
     name: "Github",
     icon: "github.svg"
 }, {
     name: "Sass",
-    icon: "sass.svg"
+    icon: "sass-original.svg"
+}, {
+    name: "Bootstrap",
+    icon:"bootstrap-plain.svg"
+}, {
+    name: "Firebase",
+    icon: "firebase-icon.svg"
+}, {
+    name: "Redux",
+    icon: "redux-original.svg"
 }]
 
+let technologiesCategory = ["frontend", "backend", "mobile"]
 
 function fillBars() {
     const fillElements = document.getElementsByClassName("fill");
@@ -315,27 +379,35 @@ technologiesButton.addEventListener('click', () => {
         softSkillsButton.classList.remove('active')
         technologiesButton.classList.add('active')
         skillsMenuContainer.classList.remove("justify-content-between")
-        skillsMenuContainer.classList.add('active', "justify-content-center")
-        skillsMenuContainer.style.height ='650px'
+        skillsMenuContainer.classList.add('active')
+        skillsMenuContainer.style.height = '70vh'
         skillsMenuContainer.innerHTML = ""
         setTimeout(() => {
-            for (let i = 0; i < technologies.length; i++) {
-                skillsMenuContainer.innerHTML += `
-        <div class="skills__menu--item" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
-            <h5>${technologies[i].name}</h5>
-            <div class="bar" >
-                <div class="fill"></div>
-            </div>
-        </div>
-        `
-         setTimeout(() => {
-             fillBars()
-         }, 500)
-
+            for (let i = 0; i < technologiesCategory.length; i++) {
+                skillsMenuContainer.innerHTML += `<div class="skills__menu--category"></div>`
             }
+            skillsMenuCategory = document.getElementsByClassName(`skills__menu--category`)
+            for (let i = 0; i < technologiesCategory.length; i++) {
+                 skillsMenuCategory[i].innerHTML += `<h2>${technologiesCategory[i]}</h2>`
+                for (let j = 0; j < technologies.length; j++) {
+                    if (technologies[j].category === technologiesCategory[i]) {
+                        skillsMenuCategory[i].innerHTML += `
+                    <div class="skills__menu--item" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+                        <h5>${technologies[j].name}</h5>
+                        <div class="bar" >
+                            <div class="fill"></div>
+                        </div>
+                    </div>
+                    `
+                    }
+                }
+            }
+            setTimeout(() => {
+                fillBars()
+            }, 500)
         }, 1000)
-        
-       
+
+
     } else {
         skillsMenuContainer.classList.remove("active")
         technologiesButton.classList.remove('active')
@@ -351,8 +423,6 @@ additionalButton.addEventListener('click', () => {
         additionalButton.classList.add('active')
         softSkillsButton.classList.remove('active')
         technologiesButton.classList.remove('active')
-        skillsMenuContainer.classList.remove('justify-content-center')
-        skillsMenuContainer.classList.add("active", "justify-content-between")
         skillsMenuContainer.style.height = '300px'
         skillsMenuContainer.innerHTML = ""
         setTimeout(() => {
@@ -419,8 +489,8 @@ function createCard(name, entity, year, img, description) {
             <img class="card-img" src="./assets/certificates/${img}" alt="${name}"/>
         </div>
         <div class="card-description-container">
-            <h4>${name}</h4>
-            <h5>${entity} - ${year}</h5>
+            <h5>${name}</h5>
+            <p>${entity} - ${year}</p>
         </div>
         <div class="card-button-container">
             <button type="button" class="btn btn-primary card-button" data-bs-toggle="modal" data-bs-whatever="${img}" data-bs-target="#modalExample">
@@ -450,7 +520,6 @@ function showModal() {
 let certificatesContainer = document.getElementById('certificates-container')
 certificates.forEach(item => {
     certificatesContainer.innerHTML += createCard(item.name, item.entity, item.year, item.img, item.description)
-    console.log(showModal())
 })
 
 
@@ -500,9 +569,6 @@ let buttonContainer = ``
 let carouselButtonsItem;
 
 for (let i = 0; i < carouselItem.length; i++) {
-
-
-
     carouselItem[i].addEventListener('mouseenter', (e) => {
         buttonContainer = `
         <div class="carousel-buttons-container">
@@ -517,8 +583,6 @@ for (let i = 0; i < carouselItem.length; i++) {
         setTimeout(() => {
             carouselButtons[i].classList.remove("hide")
             carouselImgEffect[i].classList.remove('hide')
-
-
         }, 500)
 
 
