@@ -293,6 +293,7 @@ aside {
 main {
     height: fit-content;
 }
+
 main.container {
     grid-area: main;
 }
@@ -317,7 +318,8 @@ section#home {
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
-            height:100%;
+            height: 100%;
+
             #home__photo--container {
                 #home__photo--item {
                     object-fit: contain;
@@ -326,9 +328,10 @@ section#home {
 
                 }
             }
+
             .resume {
                 /* background-color: #343434; */
-                border:  rgb(191, 191, 191) solid;
+                border: rgb(191, 191, 191) solid;
                 border-radius: 2em;
                 max-width: 140px;
                 transition: all 0.3s ease-in-out;
@@ -394,7 +397,7 @@ section#about {
     flex-direction: column;
     justify-content: baseline;
     margin-bottom: 50px;
-
+    margin-top: 20px;
     #about__timeline {
         width: 90%;
         margin: 5em;
@@ -442,11 +445,29 @@ section#about {
         overflow: hidden;
         transition: height 1s ease-in-out;
         height: 100%;
+        padding: 0 2em;
 
         .about__description--container {
             display: flex;
             text-align: left;
 
+            .about__description--text {
+                flex: 1;
+                margin: 0 0.8em;
+
+                h2 {
+                    font-size: 1.3em;
+                }
+
+                h3 {
+                    font-size: 0.8em;
+                    color: #aeaeae;
+                }
+
+                p {
+                    line-height: 0.5;
+                }
+            }
         }
 
     }
@@ -459,22 +480,34 @@ section#about {
 section#skills {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     #skills__menu {
-        width: 100%;
+        width: 80%;
         display: flex;
         justify-content: space-around;
+        border: 1px solid white;
+        border-radius: 1rem;
+        align-items: center;
+        margin-bottom: 1em;
 
         .skills__menu--item {
             cursor: pointer;
+            margin: 0;
+            color: #aeaeae;
+
         }
+
+        .skills__menu--item.active {
+            color: white;
+        }
+
 
     }
 }
 
 #skills__menu--container {
     display: flex;
-    width: 90%;
     flex-wrap: wrap;
     height: 100px;
     transition: height 1s ease-in-out;
@@ -486,6 +519,15 @@ section#skills {
 
     &.active::after {
         width: 100%;
+    }
+
+    .skills__menu--category {
+        flex: 1;
+        margin: 0 1em;
+
+        h2 {
+            font-size: 1.5em;
+        }
     }
 
     .skills__menu--item {
@@ -501,9 +543,18 @@ section#skills {
             transition: width 0.3s ease-in-out;
         }
 
+        h2 {
+            font-size: 1.2em;
+        }
+
+        h5 {
+            font-size: 1em;
+            color: #4f4f4f;
+        }
+
         .bar {
-            width: 300px;
-            height: 1em;
+            width: 250px;
+            height: 0.8em;
             background-color: #e0e0e0;
             position: relative;
             border-radius: 2rem;
@@ -523,7 +574,7 @@ section#skills {
     .polygon--container {
         width: 150px;
         height: 150px;
-        background-color: #343434;
+
         clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
         border-radius: 2rem;
         overflow: hidden;
@@ -542,6 +593,41 @@ section#skills {
         }
     }
 
+    .recommendation__card--container {
+        display: flex;
+        justify-content: center;
+
+        .recommendation__card--item {
+            border: #aeaeae 1px solid;
+            border-radius: 2em;
+            padding: 1em;
+            margin: 0.5em;
+            width: 80%;
+
+            h2 {
+                font-size: 1.5em;
+                display: inline;
+            }
+
+            h3 {
+                font-size: 1em;
+                display: inline;
+                color: #aeaeae;
+            }
+
+            h4 {
+                font-size: 0.8em;
+
+            }
+
+            p {
+                font-size: 0.8em;
+            }
+
+
+        }
+    }
+
 }
 
 
@@ -552,8 +638,10 @@ section#skills {
 
 section#certificates {
 
+    display: flex;
+    justify-content: center;
+
     #certificates-container {
-        width: 90vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -577,7 +665,6 @@ section#certificates {
                 object-fit: contain;
                 object-position: center;
 
-                .card-img {}
             }
 
         }
@@ -602,6 +689,42 @@ section#certificates {
             }
         }
 
+    }
+
+    .pagination {
+        text-align: center;
+        margin-top: 1em;
+
+    }
+
+    .pagination-button {
+        position: absolute;
+        top: 40vh;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 90px;
+        width: fit-content;
+        height: fit-content;
+        background: var(--color-primary);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        font-weight: bolder;
+        opacity: 0.5;
+    }
+
+    .pagination-button#prev-page {
+
+        left: 0;
+    }
+
+    .pagination-button#next-page {
+
+        right: 0;
+    }
+
+    .pagination-button:hover {
+        opacity: 0.8
     }
 }
 
@@ -686,10 +809,19 @@ section#portfolio {
                         background-image: var(--color-primary);
                         border: #343434 1px solid;
                         cursor: pointer;
+                        text-decoration: none;
                     }
+
                 }
 
+
             }
+
+            .carousel-text {
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+            }
+
+
 
         }
 
@@ -750,20 +882,22 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .footer-item {
         width: 30%;
         display: flex;
-        align-items: center;        
+        align-items: center;
+
         img {
             width: 1em;
             margin-right: 5px;
         }
 
         p {
-            color:#aeaeae;
+            color: #aeaeae;
             position: relative;
             top: 50%;
-            
+
 
         }
     }
