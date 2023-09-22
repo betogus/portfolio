@@ -123,7 +123,7 @@ setTimeout(() => {
 const resumeButton = document.getElementById('resume');
 
 resumeButton.addEventListener('click', function () {
-    const filePath = './assets/certificates/CV - Gustavo Torres (English).pdf'; // Reemplaza con la ruta correcta
+    const filePath = './public/assets/certificates/CV - Gustavo Torres (English).pdf'; // Reemplaza con la ruta correcta
 
     const link = document.createElement('a');
     link.href = filePath;
@@ -510,7 +510,7 @@ additionalButton.addEventListener('click', () => {
                 skillsMenuContainer.innerHTML += `
         <div class="polygon--container" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
             <div class="polygon--item">
-                <img class="polygon--img" src="./assets/icons/${skills[i].icon}" alt="${skills[i].icon}"/>
+                <img class="polygon--img" src="./public/assets/icons/${skills[i].icon}" alt="${skills[i].icon}"/>
                 <p>${skills[i].name}</p>
             </div>
         </div>
@@ -626,7 +626,7 @@ function createCard(name, entity, year, img, description) {
 
     <div class="card-container" data-aos="zoom-in">
         <div class="card-img-container">
-            <img class="card-img" src="./assets/certificates/${img}" alt="${name}"/>
+            <img class="card-img" src="./public/assets/certificates/${img}" alt="${name}"/>
         </div>
         <div class="card-description-container">
             <h5>${name}</h5>
@@ -650,7 +650,7 @@ function showModal() {
             const img = button.getAttribute('data-bs-whatever')
             const body = modalExample.querySelector('.modal-body')
             body.innerHTML = `
-            <img class="modal-img" src="./assets/certificates/${img}" alt="modal-img"/>
+            <img class="modal-img" src="./public/assets/certificates/${img}" alt="modal-img"/>
             `
         })
     }
@@ -749,7 +749,7 @@ for (let i = 0; i < websites.length; i++) {
     `
     portfolioCarousel.innerHTML += `
     <div class="carousel-item ${i === 0? "active" : ""}">
-        <img src="./assets/img/${websites[i].img}" class="d-block w-100 carousel-img" alt="${websites[i].img}">
+        <img src="./public/assets/img/${websites[i].img}" class="d-block w-100 carousel-img" alt="${websites[i].img}">
         <div class="carousel-img-effect"></div>
         
         <div class="carousel-buttons"></div>
