@@ -98,7 +98,7 @@ window.addEventListener('wheel', (e) => {
 /* HOME */
 
 let homeDescriptionItem = document.getElementById('home__description--item')
-let descriptionItem = `I am a civil engineer working in my profession in office tasks.   However, after graduating, I became interested in the world of programming, so I continued my studies as a full stack web developer at CoderHouse. Currently, I have finished the HTML, CSS, Javascript, React Js, React Native and Backend courses and I am studying at Oracle Next Education, XAcademy and "Instituto Superior Politécnico de Córdoba ". Until I can finish my courses, my goal is to be able to work as a Frontend developer from now on. I 've an intermediate level of English.`
+let descriptionItem = `I am a civil engineer working in my profession in office tasks.   However, after graduating, I became interested in the world of programming, so I continued my studies as a full stack web developer at CoderHouse. Currently, I have finished the HTML, CSS, Javascript, React Js, React Native and Backend courses and I am studying at Oracle Next Education, XAcademy and No Country. Until I can finish my courses, my goal is to be able to work as a Full stack developer from now on. I 've an intermediate level of English.`
 const cursor = document.getElementById('cursor');
 
 //Efecto de tipeo en la descripción
@@ -120,6 +120,19 @@ setTimeout(() => {
     simulateTyping(descriptionItem);
 }, 1000)
 
+const resumeButton = document.getElementById('resume');
+
+resumeButton.addEventListener('click', function () {
+    const filePath = './assets/certificates/CV - Gustavo Torres (English).pdf'; // Reemplaza con la ruta correcta
+
+    const link = document.createElement('a');
+    link.href = filePath;
+
+    link.setAttribute('download', 'CV - Gustavo Torres.pdf'); // Cambia el nombre del archivo según tus necesidades
+
+    link.click();
+});
+
 
 /* ABOUT ME */
 
@@ -132,7 +145,6 @@ let dateDescription = [
         <div class="about__description--text">
             <h2>Argentina Programa</h2>
             <h3>First Level</h3>
-            <p>Languages learned:</p>
             <ul>
                 <li>Ruby (basic)</li>
                 <li>Javascript</li>
@@ -145,7 +157,6 @@ let dateDescription = [
         <div class="about__description--text">
             <h2>Soy Dalto</h2>
             <h3>Autodidact</h3>
-            <p>Languages learned:<p>
             <ul>
                 <li>HTML</li>
                 <li>CSS</li>
@@ -159,7 +170,6 @@ let dateDescription = [
         <div class="about__description--text">
             <h2>Web Development</h2>
             <h3>Coderhouse</h3>
-            <p>Languages learned: </p>
             <ul>
                 <li>HTML</li>
                 <li>CSS</li>
@@ -181,7 +191,6 @@ let dateDescription = [
         <div class="about__description--text">
             <h2>App Development</h2>
             <h3>Coderhouse</h3>
-            <p>technology learned: </p>
             <ul>
                 <li>React Native</li>
             </ul>
@@ -189,7 +198,6 @@ let dateDescription = [
         <div class="about__description--text">
             <h2>Backend Development</h2>
             <h3>Coderhouse</h3>
-            <p>technology learned: </p>
             <ul>
                 <li>Express Js</li>
                 <li>Node Js</li>
@@ -197,21 +205,25 @@ let dateDescription = [
             </ul>
         </div>
         <div class="about__description--text">
-            <h2>"Desarrollo Web y Aplicaciones Digitales"</h2>
-            <h3>Instituto Superior Politécnico de Córdoba</h3>
+            <h2>No Country</h2>
+            <h3>Experience in a project simulation</h3>
+            <ul>
+                <li> React Js </li> 
+            </ul>
         </div>
+       
         <div class="about__description--text">
-            <h2>"XAcademy - Santex"</h2>
-            <p>technology learned: </p>
+            <h2>XAcademy - Santex</h2>
             <ul>
                 <li>Angular</li>
+                <li>Node Js</li>
             </ul>
         </div>
         <div class="about__description--text">
             <h2>Oracle Next Education</h2>
-            <p>technology learned:</p>
             <ul>
-                <li>React Js</li>
+                <li>Java - Spring Boot</li>
+
             </ul>
         </div>
     </div>
@@ -238,7 +250,7 @@ for (let i = 1; i <= 3; i++) {
         } else {
             dateContainerButtonActive[i] = false
             aboutMeDescription.classList.remove('active')
-            for (let j = 1 ; j <=3; j++) {
+            for (let j = 1; j <= 3; j++) {
                 date[j].classList.remove('active')
             }
             aboutMeDescription.innerHTML = ''
@@ -251,111 +263,179 @@ let timeline
 /* SKILLS */
 
 
-let technologies = [{
-    name: "HTML",
-    level: 3,
-    icon: "html5.svg",
-    category: "frontend"
-}, {
-    name: "CSS",
-    level: 3,
-    icon: "css3-alt.svg",
-    category: "frontend"
-}, {
-    name: "Javascript",
-    level: 3,
-    icon: "square-js.svg",
-    category: "frontend"
-}, {
-    name: "React Js",
-    level: 3,
-    icon: "react.svg",
-    category: "frontend"
-}, {
-    name: "React Native",
-    level: 3,
-    icon: "react.svg",
-    category: "mobile"
-}, {
-    name: "Express Js",
-    level: 3,
-    icon: "",
-    category: "backend"
-}, {
-    name: "Node Js",
-    level: 3,
-    icon: "node.svg",
-    category: "backend"
-}, {
-    name: "Mongo DB",
-    level: 3,
-    icon: "",
-    category: "backend"
-}, {
-    name: "Python",
-    level: 1,
-    icon: "python.svg",
-    category: "backend"
-}, {
-    name: "C#",
-    level: 1,
-    icon: "c-sharp.svg",
-    category: "backend"
-}, {
-    name: ".NET",
-    level: 1,
-    icon: "dotnet.svg",
-    category: "backend"
-}, {
-    name: "Ruby",
-    level: 1,
-    icon: "ruby.svg",
-    category: "backend"
-}, {
-    name: "Typescript",
-    level: 1,
-    icon: "typescript.svg",
-    category: "frontend"
-}, {
-    name: "Angular",
-    level: 1,
-    icon: "angular.svg",
-    category: "frontend"
-}]
-let skills = [{
-    name: "Git",
-    icon: "git-plain.svg"
-}, {
-    name: "Github",
-    icon: "github.svg"
-}, {
-    name: "Sass",
-    icon: "sass-original.svg"
-}, {
-    name: "Bootstrap",
-    icon:"bootstrap-plain.svg"
-}, {
-    name: "Firebase",
-    icon: "firebase-icon.svg"
-}, {
-    name: "Redux",
-    icon: "redux-original.svg"
-}]
+let technologies = [
 
-let technologiesCategory = ["frontend", "backend", "mobile"]
+    {
+        name: "HTML",
+        level: 3,
+        icon: "html5.svg",
+        category: "basic"
+    }, {
+        name: "CSS",
+        level: 3,
+        icon: "css3-alt.svg",
+        category: "basic"
+    }, {
+        name: "Javascript",
+        level: 3,
+        icon: "square-js.svg",
+        category: "basic"
+    }, {
+        name: ".NET",
+        level: 1,
+        icon: "dotnet.svg",
+        category: "basic"
+    }, {
+        name: "Ruby",
+        level: 1,
+        icon: "ruby.svg",
+        category: "basic"
+    },
+    {
+        name: "Typescript",
+        level: 1,
+        icon: "typescript.svg",
+        category: "basic"
+    },
+    {
+        name: "Python",
+        level: 1,
+        icon: "python.svg",
+        category: "basic"
+    }, {
+        name: "C#",
+        level: 1,
+        icon: "c-sharp.svg",
+        category: "basic"
+    }, {
+        name: "React Js",
+        level: 3,
+        icon: "react.svg",
+        category: "frontend"
+    },
+    {
+        name: "Angular",
+        level: 1,
+        icon: "angular.svg",
+        category: "frontend"
+    }, {
+        name: "Express Js",
+        level: 3,
+        icon: "",
+        category: "backend"
+    }, {
+        name: "Node Js",
+        level: 3,
+        icon: "node.svg",
+        category: "backend"
+    }, {
+        name: "Mongo DB",
+        level: 3,
+        icon: "",
+        category: "backend"
+    },
+    {
+        name: "MySQL",
+        level: 2,
+        icon: "",
+        category: "backend"
+    },
+    {
+        name: "Java",
+        level: 2,
+        icon: "",
+        category: "backend"
+    },
+
+    {
+        name: "React Native",
+        level: 3,
+        icon: "react.svg",
+        category: "mobile"
+    }
+]
+let skills = [{
+        name: "Git",
+        icon: "git-plain.svg"
+    }, {
+        name: "Github",
+        icon: "github.svg"
+    }, {
+        name: "Sass",
+        icon: "sass-original.svg"
+    }, {
+        name: "Bootstrap",
+        icon: "bootstrap-plain.svg"
+    }, {
+        name: "Firebase",
+        icon: "firebase-icon.svg"
+    }, {
+        name: "Redux",
+        icon: "redux-original.svg"
+    },
+    {
+        name: "SQLite",
+        icon: "sqlite.svg"
+    }, {
+        name: "Figma",
+        icon: "figma-original.svg"
+    }, {
+        name: "GraphQL",
+        icon: "graphql.svg"
+    }, {
+        name: "Handlebars",
+        icon: "handlebars-original-wordmark.svg"
+    }, {
+        name: "Material UI",
+        icon: "materialui-original.svg"
+    }, {
+        name: "Nginx",
+        icon: "nginx-original.svg"
+    }, {
+        name: "NPM",
+        icon: "npm.svg"
+    }, {
+        name: "Sequelize",
+        icon: "sequelize.svg"
+    }, {
+        name: "Tailwind",
+        icon: "tailwind.svg"
+    }, {
+        name: "Trello",
+        icon: "trello.svg"
+    }, {
+        name: "VSCode",
+        icon: "vscode.svg"
+    }
+]
+
+let technologiesCategory = ["basic", "frontend", "backend", "mobile"]
+
+let recommendations = [{
+        name: "Pablo Aquino",
+        title: "Frontend Developer Jr. | Javascript | React Js",
+        relation: "colleague at No Country",
+        message: "Con Gustavo formamos parte en un proyecto de emulación laboral de NoCountry, desarrollando un sitio web, encargándonos del área de Frontend. Desde un principio estuvo comprometido con su trabajo y siempre dispuesto a ayudar. Cuenta con sólidos conocimientos y experiencia. Demostró ser una persona resolutiva, contribuyendo siempre con ideas para alcanzar los objetivos del proyecto. Fue un placer haber formado parte del mismo equipo."
+    },
+    {
+        name: "Natalia Potaves",
+        title: "Full Stack Developer | Java | Spring Boot | SQL | Laravel | Angular",
+        relation: "colleague at No Country",
+        message: "Trabaje con Gustavo en el desarrollo de un proyecto en No Country.Es un profesional muy responsable, comprometido y con amplio conocimiento en el Desarrollo Front - End.Además de contar con una gran predisposición, siempre ayudar a los compañeros, ser colaborativo, empático y siempre contribuir al equipo para cumplir las metas y objetivos del proyecto."
+    },
+    {
+        name: "Sofía Allegretti",
+        title: "UX UI Designer",
+        relation: "colleague at No Country",
+        message: "Trabajé con Gustavo dentro de un equipo de diseño y desarrollo Web. Es un profesional comprometido y responsable, siempre estuvo dispuesto a escuchar las necesidades del quipo y a solucionar los problemas que iban surgiendo. Es una persona empática, educada y resolutiva, con conocimientos solidos de su área."
+    },
+
+]
 
 function fillBars() {
     const fillElements = document.getElementsByClassName("fill");
-    let width = 0;
     for (let i = 0; i < technologies.length; i++) {
-        if (technologies[i].level === 1) {
-            width = 25;
-        } else if (technologies[i].level === 2) {
-            width = 50;
-        } else {
-            width = 100;
-        }
-        fillElements[i].style.width = width + "%";
+        fillElements[i].style.width = technologies[i].level * 33.33 + "%";
     }
 
 }
@@ -388,7 +468,7 @@ technologiesButton.addEventListener('click', () => {
             }
             skillsMenuCategory = document.getElementsByClassName(`skills__menu--category`)
             for (let i = 0; i < technologiesCategory.length; i++) {
-                 skillsMenuCategory[i].innerHTML += `<h2>${technologiesCategory[i]}</h2>`
+                skillsMenuCategory[i].innerHTML += `<h2>${technologiesCategory[i]}</h2>`
                 for (let j = 0; j < technologies.length; j++) {
                     if (technologies[j].category === technologiesCategory[i]) {
                         skillsMenuCategory[i].innerHTML += `
@@ -446,6 +526,36 @@ additionalButton.addEventListener('click', () => {
     }
 })
 
+softSkillsButton.addEventListener('click', () => {
+    if (pestaniaActiva !== softSkillsButton.ADDITIONAL) {
+        pestaniaActiva = softSkillsButton.ADDITIONAL
+        softSkillsButton.classList.add('active')
+        additionalButton.classList.remove('active')
+        technologiesButton.classList.remove('active')
+        skillsMenuContainer.style.height = '300px'
+        skillsMenuContainer.innerHTML = ""
+        setTimeout(() => {
+            for (let i = 0; i < recommendations.length; i++) {
+                skillsMenuContainer.innerHTML += `
+        <div class="recommendation__card--container" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+        <div class="recommendation__card--item">
+                <h2>${recommendations[i].name}</h2>
+                <h3>(${recommendations[i].title})</h3>
+                <h4>${recommendations[i].relation}</h4>
+                <p>${recommendations[i].message}</p>
+            </div>
+        </div>
+        `
+            }
+        }, 1000)
+
+    } else {
+        skillsMenuContainer.classList.remove("active")
+        technologiesButton.classList.remove('active')
+        skillsMenuContainer.innerHTML = ""
+        skillsMenuContainer.style.height = '100px'
+    }
+})
 /* CERTIFICATES */
 
 let certificates = [{
@@ -478,6 +588,36 @@ let certificates = [{
         entity: "CoderHouse",
         year: 2023,
         img: "Desarrollo de Aplicaciones (English).png"
+    }, {
+        name: "Full Stack Developer",
+        entity: "CoderHouse",
+        year: 2023,
+        img: "Programacion Full Stack.png"
+    }, {
+        name: "Back End Java",
+        entity: "Oracle",
+        year: 2023,
+        img: "dev en formacion.jpg"
+    }, {
+        name: "English Level (C1)",
+        entity: "EF SET",
+        year: 2023,
+        img: "EF SET Certificate.jpg"
+    }, {
+        name: "Java JRE & JDK",
+        entity: "Oracle",
+        year: 2023,
+        img: "Java JRE y JDK.jpg"
+    }, {
+        name: "Java Orientado a Objetos",
+        entity: "Oracle",
+        year: 2023,
+        img: "Java Orientado a Objetos.jpg"
+    }, {
+        name: "Civil Engineer",
+        entity: "Facultad de Ciencias Exactas, Físicas y Naturales",
+        year: 2021,
+        img: "ingenieria civil.png"
     }
 ]
 
@@ -521,9 +661,41 @@ let certificatesContainer = document.getElementById('certificates-container')
 certificates.forEach(item => {
     certificatesContainer.innerHTML += createCard(item.name, item.entity, item.year, item.img, item.description)
 })
+showModal();
 
+const certificatesPerPage = 3; // Number of certificates per page
+let currentPage = 1; // Current page
 
+function displayCertificates(page) {
+    const startIndex = (page - 1) * certificatesPerPage;
+    const endIndex = startIndex + certificatesPerPage;
+    const certificatesToDisplay = certificates.slice(startIndex, endIndex);
 
+    const certificatesContainer = document.getElementById('certificates-container');
+    certificatesContainer.innerHTML = '';
+
+    certificatesToDisplay.forEach(item => {
+        certificatesContainer.innerHTML += createCard(item.name, item.entity, item.year, item.img, item.description);
+    });
+}
+
+// Function to handle pagination button clicks
+function handlePaginationClick(event) {
+    if (event.target.id === 'prev-page' && currentPage > 1) {
+        currentPage--;
+    } else if (event.target.id === 'next-page' && currentPage < Math.ceil(certificates.length / certificatesPerPage)) {
+        currentPage++;
+    }
+
+    displayCertificates(currentPage);
+}
+
+// Add event listeners for pagination buttons
+document.getElementById('prev-page').addEventListener('click', handlePaginationClick);
+document.getElementById('next-page').addEventListener('click', handlePaginationClick);
+
+// Initial display of certificates
+displayCertificates(currentPage);
 
 /* PORTFOLIO */
 
@@ -531,14 +703,41 @@ let websites = [{
         name: "Argumento Restaurante",
         img: "Argumento.png",
         link: "https://coderback.web.app/",
-        repo: "https://github.com/betogus/argumentoBar"
+        repo: "https://github.com/betogus/argumentoBar",
+        description: "HTML / CSS / Javascript"
     },
     {
         name: "Jam Glass - Jazz Band",
         img: "Jam Glass.png",
         link: "https://betogus.github.io/coderHouse/",
-        repo: "https://github.com/betogus/coderHouse"
+        repo: "https://github.com/betogus/coderHouse",
+        description: "HTML / CSS"
+    }, {
+        name: "Re House",
+        img: "rehouse.png",
+        link: "https://rehouseweb.onrender.com/",
+        repo: "https://github.com/No-Country/c12-g21-m-java-react",
+        description: "React Js / Java - Spring Boot"
+    }, {
+        name: "Llanten Almacen",
+        img: "Llanten almacen.png",
+        link: "https://betogus.github.io/llantenAlmacen/",
+        repo: "https://github.com/betogus/llantenAlmacen",
+        description: "HTML / CSS / Javascript"
+    }, {
+        name: "Renova Tu Vestidor",
+        img: "renovatuvestidor.png",
+        link: "",
+        repo: "https://github.com/betogus/renovaTuVestidor/",
+        description: "React Js"
+    }, {
+        name: "Backend - Coderhouse",
+        img: "backend.png",
+        link: "",
+        repo: "https://github.com/betogus/Backend-Coderhouse",
+        description: "Node Js / Express"
     }
+
 ]
 
 let portfolioIndicators = document.getElementById('portfolio-indicators')
@@ -555,8 +754,8 @@ for (let i = 0; i < websites.length; i++) {
         
         <div class="carousel-buttons"></div>
         <div class="carousel-caption d-none d-md-block">
-            <h5>${websites[i].name}</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5 class="carousel-text">${websites[i].name}</h5>
+            <p class="carousel-text">${websites[i].description}</p>
         </div>
     </div>
     `
