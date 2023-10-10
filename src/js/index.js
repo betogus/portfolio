@@ -618,6 +618,11 @@ let certificates = [{
         entity: "Facultad de Ciencias Exactas, Físicas y Naturales",
         year: 2021,
         img: "ingenieria civil.png"
+    }, {
+        name: "Front End React",
+        entity: "No Country",
+        year: 2023,
+        img: "No Country.jpg"
     }
 ]
 
