@@ -472,7 +472,7 @@ technologiesButton.addEventListener('click', () => {
                 for (let j = 0; j < technologies.length; j++) {
                     if (technologies[j].category === technologiesCategory[i]) {
                         skillsMenuCategory[i].innerHTML += `
-                    <div class="skills__menu--item" data-aos="fade-right" data-aos-offset="300" data-aos-duration="1000" data-aos-easing="ease-in-sine">
+                    <div class="skills__menu--item" data-aos="fade-right" data-aos-offset="50" data-aos-duration="1000" data-aos-easing="ease-in-sine">
                         <h5>${technologies[j].name}</h5>
                         <div class="bar" >
                             <div class="fill"></div>
@@ -668,8 +668,15 @@ certificates.forEach(item => {
 })
 showModal();
 
-const certificatesPerPage = 3; // Number of certificates per page
+let certificatesPerPage = 3; // Number of certificates per page
 let currentPage = 1; // Current page
+
+if (window.innerWidth < 1200 && window.innerWidth > 900) {
+    certificatesPerPage = 2
+} else if (window.innerWidth < 900) {
+    certificatesPerPage = 1
+}
+
 
 function displayCertificates(page) {
     const startIndex = (page - 1) * certificatesPerPage;
